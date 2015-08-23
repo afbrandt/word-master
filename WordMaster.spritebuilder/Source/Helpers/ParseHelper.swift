@@ -14,6 +14,8 @@ protocol ParseHelperDelegate {
 
 class ParseHelper: NSObject {
 
+    var delegate: ParseHelperDelegate?
+
     class var sharedInstance: ParseHelper {
         struct Static {
             static let instance: ParseHelper = ParseHelper()

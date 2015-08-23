@@ -24,11 +24,15 @@ class MainScene: CCNode {
         //helper.authenticationCheck()
         //let button = FBSDKLoginButton()
         //parseMgr.test()
+        fbMgr.delegate = self
+        parseMgr.delegate = self
+        
         tableNode.dataSource = self
         
         if let user = PFUser.currentUser() {
             if PFFacebookUtils.isLinkedWithUser(user) {
                 //happy path is here
+                
                 facebookButton.visible = false
             } else {
                 //user invalidated session in FB
@@ -69,3 +73,26 @@ extension MainScene: CCTableViewDataSource {
     }
 
 }
+
+extension MainScene: FacebookHelperDelegate {
+    
+    func successfulLogin() {
+    
+    }
+    
+    func successfulRegistration() {
+    
+    }
+    
+    func failedLogin() {
+    
+    }
+}
+
+extension MainScene: ParseHelperDelegate {
+    
+    func retrievedMatchResults() {
+    
+    }
+}
+
