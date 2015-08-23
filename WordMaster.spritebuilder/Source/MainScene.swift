@@ -18,12 +18,12 @@ class MainScene: CCNode {
         //let helper = MultiplayerMatchHelper.sharedInstance
         //helper.authenticationCheck()
         //let button = FBSDKLoginButton()
-        parseMgr.test()
+        //parseMgr.test()
         
     }
     
     func startLogin() {
-        fbMgr.tryLogin()
+        fbMgr.tryLoginViaParse()
     }
     
 }

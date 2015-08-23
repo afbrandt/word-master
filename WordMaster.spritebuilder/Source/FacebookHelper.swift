@@ -1,5 +1,5 @@
 //
-//  FacebookManager.swift
+//  FacebookHelper.swift
 //  WordMaster
 //
 //  Created by Andrew Brandt on 8/23/15.
@@ -8,10 +8,18 @@
 
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Parse
+
+protocol FacebookHelperDelegate {
+    func successfulLogin()
+    func successfulRegistration()
+    func failedLogin()
+}
 
 class FacebookHelper: NSObject {
     
     let manager = FBSDKLoginManager()
+    var delegate: FacebookHelperDelegate?
     
     class var sharedInstance: FacebookHelper {
         struct Static {
@@ -33,6 +41,31 @@ class FacebookHelper: NSObject {
                 println("probably normal login")
             }
         })
+    }
+    
+    func tryLoginViaParse() {
+        let permissions = ["email", "friend_list"]
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions)
+        { (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                println("successful login")
+                if user.isNew {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        delegate?.successfulRegistration()
+                    })
+                } else {
+                   dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        delegate?.successfulLogin()
+                    })
+                }
+            } else {
+                println("failed login")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    delegate?.failedLogin()
+                })
+            }
+        }
         
     }
    

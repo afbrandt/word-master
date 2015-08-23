@@ -29,6 +29,7 @@
 #import "CCBuilderReader.h"
 #import <GameKit/GameKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <Parse/Parse.h>
 
 @implementation AppController
@@ -57,11 +58,17 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    //parse configuration
     [Parse setApplicationId:@"hNkDiRKDc0gGcBw0TSJmZo7jFDMAnHqXiHrOeoVb"
               clientKey:@"t1ujoEEMM9ZCsHlBTAMLDNzltvJLmeQrwDpga6gL"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    
+    //facebook configuration
+//    return [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                    didFinishLaunchingWithOptions:launchOptions];
+    return true;
 }
 
 - (CCScene*) startScene
