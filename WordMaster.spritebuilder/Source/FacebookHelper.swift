@@ -18,7 +18,7 @@ protocol FacebookHelperDelegate {
 
 class FacebookHelper: NSObject {
     
-    let manager = FBSDKLoginManager()
+    let manager = PFFacebookUtils.facebookLoginManager()
     var delegate: FacebookHelperDelegate?
     
     class var sharedInstance: FacebookHelper {
@@ -43,19 +43,21 @@ class FacebookHelper: NSObject {
         })
     }
     
+    
     func tryLoginViaParse() {
         let permissions = ["email", "friend_list"]
         
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions)
         { (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
-                println("successful login")
                 if user.isNew {
+                    println("successful new user")
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         delegate?.successfulRegistration()
                     })
                 } else {
-                   dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    println("successful login")
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         delegate?.successfulLogin()
                     })
                 }
@@ -66,6 +68,10 @@ class FacebookHelper: NSObject {
                 })
             }
         }
+        
+    }
+    
+    func linkParseToFacebook(newUser: Bool) {
         
     }
    

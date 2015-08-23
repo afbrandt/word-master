@@ -8,6 +8,10 @@
 
 import Parse
 
+protocol ParseHelperDelegate {
+    func retrievedMatchResults()
+}
+
 class ParseHelper: NSObject {
 
     class var sharedInstance: ParseHelper {
@@ -17,12 +21,18 @@ class ParseHelper: NSObject {
         return Static.instance
     }
    
-    func test() {
-        
-        let obj = PFObject(className: "TestObject")
-        obj["foo"] = "bar"
-        obj.saveInBackground()
-        
+//    func test() {
+//        
+//        let obj = PFObject(className: "TestObject")
+//        obj["foo"] = "bar"
+//        obj.saveInBackground()
+//        
+//    }
+
+    func getMatchesForUser(user: PFUser) {
+    
     }
+    
+    
    
 }
