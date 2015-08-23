@@ -11,12 +11,14 @@ import Foundation
 class MainScene: CCNode {
 
     let fbMgr = FacebookHelper.sharedInstance
+    let parseMgr = ParseHelper.sharedInstance
     
     override func onEnter() {
         super.onEnter()
         //let helper = MultiplayerMatchHelper.sharedInstance
         //helper.authenticationCheck()
         //let button = FBSDKLoginButton()
+        parseMgr.test()
         
     }
     

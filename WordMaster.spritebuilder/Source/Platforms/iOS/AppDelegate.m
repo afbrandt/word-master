@@ -29,6 +29,7 @@
 #import "CCBuilderReader.h"
 #import <GameKit/GameKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Parse/Parse.h>
 
 @implementation AppController
 
@@ -55,6 +56,9 @@
     //[cocos2dSetup setObject:kEAGLColorFormatRGB565 forKey:CCConfigPixelFormat];
     
     [self setupCocos2dWithOptions:cocos2dSetup];
+    
+    [Parse setApplicationId:@"hNkDiRKDc0gGcBw0TSJmZo7jFDMAnHqXiHrOeoVb"
+              clientKey:@"t1ujoEEMM9ZCsHlBTAMLDNzltvJLmeQrwDpga6gL"];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];

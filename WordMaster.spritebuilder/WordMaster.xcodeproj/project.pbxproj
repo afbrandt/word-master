@@ -15,6 +15,18 @@
 		496CA3351B8886B5003CED79 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CA3341B8886B5003CED79 /* Gameplay.swift */; };
 		496CA3371B8889F0003CED79 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496CA3361B8889F0003CED79 /* GameKit.framework */; };
 		496CA3391B888A70003CED79 /* MultiplayerMatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CA3381B888A70003CED79 /* MultiplayerMatchHelper.swift */; };
+		49EFDAFE1B896B5C00CA4991 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDAFD1B896B5C00CA4991 /* Parse.framework */; };
+		49EFDB071B896C1300CA4991 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */; };
+		49EFDB091B896C1300CA4991 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB031B896C1300CA4991 /* ParseFacebookUtilsV4.framework */; };
+		49EFDB0A1B896C1300CA4991 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB041B896C1300CA4991 /* ParseTwitterUtils.framework */; };
+		49EFDB0B1B896C1300CA4991 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB051B896C1300CA4991 /* ParseUI.framework */; };
+		49EFDB0E1B896D3700CA4991 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49EFDB0D1B896D3700CA4991 /* FacebookSDKStrings.bundle */; };
+		49EFDB101B896D4700CA4991 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB0F1B896D4700CA4991 /* Accounts.framework */; };
+		49EFDB121B896D5000CA4991 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB111B896D5000CA4991 /* Social.framework */; };
+		49EFDB141B896D9C00CA4991 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB131B896D9C00CA4991 /* libstdc++.6.dylib */; };
+		49EFDB161B896E0D00CA4991 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB151B896E0D00CA4991 /* libsqlite3.dylib */; };
+		49EFDB181B896F0700CA4991 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB171B896F0600CA4991 /* Bolts.framework */; };
+		49EFDB1A1B896F7100CA4991 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB191B896F7100CA4991 /* SystemConfiguration.framework */; };
 		5B121030197484FA004C1E1D /* WordMasterActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* WordMasterActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -164,6 +176,19 @@
 		496CA3341B8886B5003CED79 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gameplay.swift; path = Source/Gameplay.swift; sourceTree = "<group>"; };
 		496CA3361B8889F0003CED79 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		496CA3381B888A70003CED79 /* MultiplayerMatchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiplayerMatchHelper.swift; path = Source/MultiplayerMatchHelper.swift; sourceTree = "<group>"; };
+		49EFDAFD1B896B5C00CA4991 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		49EFDB031B896C1300CA4991 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		49EFDB041B896C1300CA4991 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
+		49EFDB051B896C1300CA4991 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		49EFDB061B896C1300CA4991 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		49EFDB0D1B896D3700CA4991 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		49EFDB0F1B896D4700CA4991 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		49EFDB111B896D5000CA4991 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		49EFDB131B896D9C00CA4991 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		49EFDB151B896E0D00CA4991 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		49EFDB171B896F0600CA4991 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-starter-project-1/ParseStarterProject-Swift/Bolts.framework"; sourceTree = "<group>"; };
+		49EFDB191B896F7100CA4991 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -270,16 +295,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EFDB1A1B896F7100CA4991 /* SystemConfiguration.framework in Frameworks */,
+				49EFDB161B896E0D00CA4991 /* libsqlite3.dylib in Frameworks */,
+				49EFDB141B896D9C00CA4991 /* libstdc++.6.dylib in Frameworks */,
+				49EFDB121B896D5000CA4991 /* Social.framework in Frameworks */,
+				49EFDB101B896D4700CA4991 /* Accounts.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
+				49EFDB091B896C1300CA4991 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				49EFDB181B896F0700CA4991 /* Bolts.framework in Frameworks */,
 				490E455E1B895EB0003FF9C8 /* FBSDKShareKit.framework in Frameworks */,
+				49EFDB071B896C1300CA4991 /* ParseCrashReporting.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
 				496CA3371B8889F0003CED79 /* GameKit.framework in Frameworks */,
 				490E455D1B895EB0003FF9C8 /* FBSDKLoginKit.framework in Frameworks */,
+				49EFDB0B1B896C1300CA4991 /* ParseUI.framework in Frameworks */,
+				49EFDAFE1B896B5C00CA4991 /* Parse.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
 				B77F1B3A17B978D7009739AE /* AVFoundation.framework in Frameworks */,
+				49EFDB0A1B896C1300CA4991 /* ParseTwitterUtils.framework in Frameworks */,
 				490E455C1B895EB0003FF9C8 /* FBSDKCoreKit.framework in Frameworks */,
 				B77F1B3C17B978D7009739AE /* UIKit.framework in Frameworks */,
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
@@ -511,6 +547,19 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49EFDB191B896F7100CA4991 /* SystemConfiguration.framework */,
+				49EFDB171B896F0600CA4991 /* Bolts.framework */,
+				49EFDB151B896E0D00CA4991 /* libsqlite3.dylib */,
+				49EFDB131B896D9C00CA4991 /* libstdc++.6.dylib */,
+				49EFDB111B896D5000CA4991 /* Social.framework */,
+				49EFDB0F1B896D4700CA4991 /* Accounts.framework */,
+				49EFDB0D1B896D3700CA4991 /* FacebookSDKStrings.bundle */,
+				49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */,
+				49EFDB031B896C1300CA4991 /* ParseFacebookUtilsV4.framework */,
+				49EFDB041B896C1300CA4991 /* ParseTwitterUtils.framework */,
+				49EFDB051B896C1300CA4991 /* ParseUI.framework */,
+				49EFDB061B896C1300CA4991 /* Bolts.framework */,
+				49EFDAFD1B896B5C00CA4991 /* Parse.framework */,
 				490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */,
 				490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */,
 				490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */,
@@ -760,6 +809,7 @@
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
+				49EFDB0E1B896D3700CA4991 /* FacebookSDKStrings.bundle in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
@@ -1138,6 +1188,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/Andrew/Downloads/parse-starter-project-1/ParseStarterProject-Swift",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1177,6 +1228,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/Andrew/Downloads/parse-starter-project-1/ParseStarterProject-Swift",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
