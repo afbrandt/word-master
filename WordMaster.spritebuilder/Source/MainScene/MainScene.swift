@@ -47,52 +47,10 @@ class MainScene: CCNode {
         fbMgr.tryLoginViaParse()
     }
     
-}
-
-extension MainScene: CCTableViewDataSource {
-
-    func tableView(tableView: CCTableView!, heightForRowAtIndex index: UInt) -> Float {
-        return CELL_HEIGHT
-    }
-    
-    func tableViewNumberOfRows(tableView: CCTableView!) -> UInt {
-        return 3
-    }
-    
-    func tableView(tableView: CCTableView!, nodeForRowAtIndex index: UInt) -> CCTableViewCell! {
-        let cell = CCTableViewCell()
+    func enterMatch() {
         
-        let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
-        label.anchorPoint = ccp(0,0)
-        cell.addChild(label)
-        
-        println("created cell")
-        cell.color = CCColor.whiteColor()
-        
-        return cell
     }
-
+    
 }
 
-extension MainScene: FacebookHelperDelegate {
-    
-    func successfulLogin() {
-    
-    }
-    
-    func successfulRegistration() {
-    
-    }
-    
-    func failedLogin() {
-    
-    }
-}
-
-extension MainScene: ParseHelperDelegate {
-    
-    func retrievedMatchResults() {
-    
-    }
-}
 
