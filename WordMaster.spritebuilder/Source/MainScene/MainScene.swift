@@ -16,7 +16,7 @@ class MainScene: CCNode {
     var facebookButton: CCButton!
     var tableNode: CCTableView!
     
-    let CELL_HEIGHT: Float = 60.0
+    var matches: [Match] = []
     
     override func onEnter() {
         super.onEnter()

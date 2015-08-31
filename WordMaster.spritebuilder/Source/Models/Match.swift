@@ -13,7 +13,11 @@ class Match: PFObject, PFSubclassing {
     //opponent FB image
     @NSManaged var imageFile: PFFile?
     
+    var fromUser: PFUser?
+    var toUser: PFUser?
     
+    var fromUserWord: String?
+    var toUserWord: String?
     
     var isCurrentUsersTurn: Bool = false
     
