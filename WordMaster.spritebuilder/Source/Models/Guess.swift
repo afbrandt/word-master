@@ -10,6 +10,9 @@ import UIKit
 
 class Guess: PFObject, PFSubclassing {
 
+    var owner: PFUser?
+    var string: String?
+
     static func parseClassName() -> String {
         return "Guess"
     }

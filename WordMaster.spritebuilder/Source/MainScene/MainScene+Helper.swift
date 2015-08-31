@@ -26,7 +26,7 @@ extension MainScene: FacebookHelperDelegate {
 extension MainScene: ParseHelperDelegate {
     
     func retrievedMatchResults() {
-    
+        tableNode.reloadData()
     }
 }
 

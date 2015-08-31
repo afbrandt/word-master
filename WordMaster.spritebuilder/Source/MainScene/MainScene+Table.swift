@@ -17,29 +17,41 @@ extension MainScene: CCTableViewDataSource {
     }
     
     func tableViewNumberOfRows(tableView: CCTableView!) -> UInt {
-        //return UInt(matches.count)
-        return 3
+        return UInt(matches.count)+1
+//        return 3
     }
     
     func tableView(tableView: CCTableView!, nodeForRowAtIndex index: UInt) -> CCTableViewCell! {
+
         //let cell = CCTableViewCell()
         
         //let cell = MatchTableCell()
         
         let cell = CCBReader.load("MatchTableCell") as! MatchTableCell
+
+        //if last cell, call to action, create a new match
+        //TODO: consider best place to configure call to action...
+        if index == UInt(matches.count) {
+
+            cell.opponentName.string = "Start a new match!"
+
+            return cell
+
+        } else {
         
-        cell.opponentName.string = "cell number \(index)"
-        
-        //cell.match = matches[Int(index)]
-        
-//        let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
-//        label.anchorPoint = ccp(0,0)
-//        cell.addChild(label)
-        
-        println("created cell")
-//        cell.color = CCColor.whiteColor()
-        
-        return cell
+            cell.opponentName.string = "cell number \(index)"
+            
+            //cell.match = matches[Int(index)]
+//            
+//            let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
+//            label.anchorPoint = ccp(0,0)
+//            cell.addChild(label)
+            
+            println("created cell")
+//            cell.color = CCColor.whiteColor()
+            
+            return cell
+        }
     }
 
 }
