@@ -13,8 +13,12 @@ class MainScene: CCNode {
     let fbMgr = FacebookHelper.sharedInstance
     let parseMgr = ParseHelper.sharedInstance
     
+    //code connected elements
     var facebookButton: CCButton!
     var tableNode: CCTableView!
+    
+    var tableContainer: CCClippingNode!
+    var tableStencil: CCNodeColor!
     
     var matches: [Match] = []
     
@@ -28,6 +32,9 @@ class MainScene: CCNode {
         parseMgr.delegate = self
         
         tableNode.dataSource = self
+        
+        tableContainer.stencil = tableStencil
+        tableContainer.alphaThreshold = 0.0
         
         if let user = PFUser.currentUser() {
             if PFFacebookUtils.isLinkedWithUser(user) {

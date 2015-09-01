@@ -35,8 +35,6 @@ extension MainScene: CCTableViewDataSource {
 
             cell.opponentName.string = "Start a new match!"
 
-            return cell
-
         } else {
         
             cell.opponentName.string = "cell number \(index)"
@@ -50,8 +48,9 @@ extension MainScene: CCTableViewDataSource {
             println("created cell")
 //            cell.color = CCColor.whiteColor()
             
-            return cell
         }
+        
+        return cell
     }
 
 }
