@@ -37,9 +37,9 @@ extension MainScene: CCTableViewDataSource {
 
         } else {
         
-            cell.opponentName.string = "cell number \(index)"
+            //cell.opponentName.string = "cell number \(index)"
             
-            //cell.match = matches[Int(index)]
+            cell.match = matches[Int(index)]
 //            
 //            let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
 //            label.anchorPoint = ccp(0,0)

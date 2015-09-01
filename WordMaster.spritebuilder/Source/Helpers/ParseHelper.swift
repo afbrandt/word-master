@@ -12,8 +12,16 @@ protocol ParseHelperDelegate {
     func retrievedMatchResults()
 }
 
-class ParseHelper: NSObject {
+let PARSE_MATCH_CLASS = "Match"
 
+let PARSE_FROM_USER_KEY = "fromUser"
+let PARSE_TO_USER_KEY = "toUser"
+
+let PARSE_FROM_USER_WORD_KEY = "fromUserWord"
+let PARSE_TO_USER_WORD_KEY = "toUserWord"
+
+class ParseHelper: NSObject {
+    
     var delegate: ParseHelperDelegate?
 
     class var sharedInstance: ParseHelper {
@@ -31,8 +39,17 @@ class ParseHelper: NSObject {
 //        
 //    }
 
-    func getMatchesForUser(user: PFUser) {
-    
+    func getMatchesForUser(user: PFUser) -> [Match] {
+        let fromUserQuery = PFQuery(className: PARSE_MATCH_CLASS)
+        fromUserQuery.whereKey(PARSE_FROM_USER_KEY, equalTo: user)
+        
+        let toUserQuery = PFQuery(className: PARSE_MATCH_CLASS)
+        toUserQuery.whereKey(PARSE_TO_USER_KEY, equalTo: user)
+        
+        let mainQuery = PFQuery.orQueryWithSubqueries([fromUserQuery, toUserQuery])
+        
+        return mainQuery.findObjects() as! [Match]
+        
     }
     
     

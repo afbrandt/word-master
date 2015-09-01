@@ -41,12 +41,28 @@ class MainScene: CCNode {
                 //happy path is here
                 
                 facebookButton.visible = false
+                
+                //synchronous, tsk tsk...
+                //TODO: perform task asynchronously
+                matches = parseMgr.getMatchesForUser(user)
+                
+                tableNode.reloadData()
+                
+                let match = Match()
+        
+                match.fromUserWord = "Hello, world number \(matches.count)"
+                
+                match.uploadMatch()
+                
+                
             } else {
                 //user invalidated session in FB
             }
         } else {
             //new user path is here
         }
+        
+        userInteractionEnabled = true
         
     }
     
@@ -55,6 +71,10 @@ class MainScene: CCNode {
     }
     
     func enterMatch() {
+        
+    }
+    
+    func buildMatch() {
         
     }
     

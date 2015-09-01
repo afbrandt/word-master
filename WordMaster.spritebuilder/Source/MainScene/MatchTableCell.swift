@@ -27,6 +27,11 @@ class MatchTableCell: CCTableViewCell {
             }
         }
         
+        if let match = match {
+            opponentName.string = match["fromUserWord"] as! String
+        }
+        
+        
 //        opponentName.string = "Hello, cell!"
 //        let background = CCNodeColor.nodeWithColor(CCColor.whiteColor(), width: 100.0, height: CELL_HEIGHT-10.0)
 //        background.anchorPoint = ccp(0.5,0.5)
