@@ -71,8 +71,32 @@ class FacebookHelper: NSObject {
         
     }
     
-    func linkParseToFacebook(newUser: Bool) {
+    func getCurrentUserInfo() {
+        let request = FBSDKGraphRequest(graphPath: "/me", parameters: nil)
         
+        request.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection?, result: AnyObject?, error: NSError?) -> Void in
+            if error == nil {
+                if let dict = result as? NSDictionary {
+                    println("user info - facebook graph request OK")
+                    
+                }
+            }
+        }
+    }
+    
+    //gets current user's friends who installed the app
+    func getCurrentUserFriends() {
+        
+        let request = FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil)
+        
+        request.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection?, result: AnyObject?, error: NSError?) -> Void in
+            if error == nil {
+                if let dict = result as? NSDictionary {
+                    println("user friends - facebook graph request OK")
+                    
+                }
+            }
+        }
     }
    
 }

@@ -9,17 +9,17 @@
 import UIKit
 import GameKit
 
-protocol MultiplayerMatchHelperDelegate {
+protocol GameKitHelperDelegate {
     func willSignIn()
     func didSignIn()
     func failedToSignIn()
     func failedToSignInWithError(error: NSError)
 }
 
-class MultiplayerMatchHelper: NSObject, GKGameCenterControllerDelegate, GKLocalPlayerListener {
+class GameKitHelper: NSObject, GKGameCenterControllerDelegate, GKLocalPlayerListener {
 
     let player = GKLocalPlayer.localPlayer()
-    var delegate: MultiplayerMatchHelperDelegate?
+    var delegate: GameKitHelperDelegate?
     var callingViewController: UIViewController?
 
 //    class var sharedInstance: MultiplayerMatchHelper {

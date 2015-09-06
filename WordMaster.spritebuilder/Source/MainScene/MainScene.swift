@@ -42,18 +42,17 @@ class MainScene: CCNode {
                 
                 facebookButton.visible = false
                 
-                //synchronous, tsk tsk...
-                //TODO: perform task asynchronously
-                matches = parseMgr.getMatchesForUser(user)
+                parseMgr.getMatchesForUser(user)
                 
-                tableNode.reloadData()
+                //tableNode.reloadData()
                 
-                let match = Match()
+                //let match = Match()
         
-                match.fromUserWord = "Hello, world number \(matches.count)"
+                //match.fromUserWord = "Hello, world number \(matches.count)"
                 
-                match.uploadMatch()
+                //match.uploadMatch()
                 
+                fbMgr.getCurrentUserFriends()
                 
             } else {
                 //user invalidated session in FB

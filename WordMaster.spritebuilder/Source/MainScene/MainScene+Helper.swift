@@ -25,7 +25,8 @@ extension MainScene: FacebookHelperDelegate {
 
 extension MainScene: ParseHelperDelegate {
     
-    func retrievedMatchResults() {
+    func retrievedMatchResults(matches: [Match]) {
+        self.matches = matches
         tableNode.reloadData()
     }
 }

@@ -9,7 +9,7 @@
 import Parse
 
 protocol ParseHelperDelegate {
-    func retrievedMatchResults()
+    func retrievedMatchResults(matches: [Match])
 }
 
 let PARSE_MATCH_CLASS = "Match"
@@ -39,7 +39,7 @@ class ParseHelper: NSObject {
 //        
 //    }
 
-    func getMatchesForUser(user: PFUser) -> [Match] {
+    func getMatchesForUser(user: PFUser) {
         let fromUserQuery = PFQuery(className: PARSE_MATCH_CLASS)
         fromUserQuery.whereKey(PARSE_FROM_USER_KEY, equalTo: user)
         
@@ -48,8 +48,12 @@ class ParseHelper: NSObject {
         
         let mainQuery = PFQuery.orQueryWithSubqueries([fromUserQuery, toUserQuery])
         
-        return mainQuery.findObjects() as! [Match]
-        
+        //return mainQuery.findObjects() as! [Match]
+        mainQuery.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let matches = result as? [Match] {
+                self.delegate?.retrievedMatchResults(matches)
+            }
+        }
     }
     
     
