@@ -10,7 +10,7 @@ import GameKit
 
 class Gameplay: CCNode {
 
-    var match: Match!
+    var match: Match?
     
     override func onEnter() {
         super.onEnter()

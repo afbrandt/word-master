@@ -33,6 +33,15 @@ class MainScene: CCNode {
         
         tableNode.dataSource = self
         
+        tableNode.block = { (Void) in
+            //println("selected cell \(self.tableNode.selectedRow)")
+            let index = Int(self.tableNode.selectedRow)
+            let count = Int(self.matches.count)
+            if index == count {
+                self.buildMatch()
+            }
+        }
+        
         tableContainer.stencil = tableStencil
         tableContainer.alphaThreshold = 0.0
         
@@ -70,11 +79,11 @@ class MainScene: CCNode {
     }
     
     func enterMatch() {
-        
+        println("enter an existing match")
     }
     
     func buildMatch() {
-        
+        println("create a new match")
     }
     
 }

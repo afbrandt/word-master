@@ -71,6 +71,7 @@ class FacebookHelper: NSObject {
         
     }
     
+    //get current user's details
     func getCurrentUserInfo() {
         let request = FBSDKGraphRequest(graphPath: "/me", parameters: nil)
         

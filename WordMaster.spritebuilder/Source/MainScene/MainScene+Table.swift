@@ -34,12 +34,15 @@ extension MainScene: CCTableViewDataSource {
         if index == UInt(matches.count) {
 
             cell.opponentName.string = "Start a new match!"
+            cell.playButton.visible = false
 
         } else {
         
             //cell.opponentName.string = "cell number \(index)"
             
             cell.match = matches[Int(index)]
+            
+            cell.playButton.setTarget(self, selector: Selector("enterMatch"))
 //            
 //            let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
 //            label.anchorPoint = ccp(0,0)

@@ -12,6 +12,7 @@ class MatchTableCell: CCTableViewCell {
     
     //code connected elements
     var opponentName: CCLabelTTF!
+    var playButton: CCButton!
     
     override func onEnter() {
         super.onEnter()
