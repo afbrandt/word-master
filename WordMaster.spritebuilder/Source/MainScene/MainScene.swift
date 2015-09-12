@@ -80,6 +80,17 @@ class MainScene: CCNode {
     
     func enterMatch() {
         println("enter an existing match")
+        
+        let gameplay = CCBReader.load("Gameplay") as! Gameplay
+        let scene = CCScene()
+        let index = Int(tableNode.selectedRow)
+        let match = matches[index]
+        
+        gameplay.match = match
+        scene.addChild(gameplay)
+        
+//        CCDirector.sharedDirector().replaceScene(scene)
+        CCDirector.sharedDirector().pushScene(scene)
     }
     
     func buildMatch() {

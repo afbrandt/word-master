@@ -17,6 +17,8 @@ class Gameplay: CCNode {
         
     }
     
-    
+    func closeMatch() {
+        CCDirector.sharedDirector().popScene()
+    }
     
 }
