@@ -89,4 +89,14 @@ class Match: PFObject, PFSubclassing {
         }
         
     }
+    
+    func fetchGuesses() {
+        ParseHelper.fetchGuessesForMatch(self)  //trailing closure
+        { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let guesses = result as? [Guess] {
+                self.guesses = guesses
+                println("retrieved guesses")
+            }
+        }
+    }
 }

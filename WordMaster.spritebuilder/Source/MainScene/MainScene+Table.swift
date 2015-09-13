@@ -39,8 +39,9 @@ extension MainScene: CCTableViewDataSource {
         } else {
         
             //cell.opponentName.string = "cell number \(index)"
-            
-            cell.match = matches[Int(index)]
+            let match = matches[Int(index)]
+            match.fetchGuesses()
+            cell.match = match
             
             cell.playButton.setTarget(self, selector: Selector("enterMatch"))
 //            
