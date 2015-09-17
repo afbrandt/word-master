@@ -21,7 +21,7 @@ class Match: PFObject, PFSubclassing {
         }
     }
     
-    var toUser: PFUser?{
+    var toUser: PFUser? {
         didSet {
             if let user = toUser{
                 setObject(user, forKey: PARSE_TO_USER_KEY)

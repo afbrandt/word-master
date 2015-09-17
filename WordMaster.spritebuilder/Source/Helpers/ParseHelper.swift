@@ -14,6 +14,7 @@ protocol ParseHelperDelegate {
 
 let PARSE_MATCH_CLASS = "Match"
 let PARSE_GUESS_CLASS = "Guess"
+let PARSE_USER_CLASS = "User"
 
 let PARSE_FROM_USER_KEY = "fromUser"
 let PARSE_TO_USER_KEY = "toUser"
@@ -25,6 +26,11 @@ let PARSE_GUESS_MATCH_KEY = "match"
 
 let PARSE_OWNER_GUESS_KEY = "owner"
 let PARSE_STRING_GUESS_KEY = "string"
+
+let PARSE_USERNAME_KEY = "username"
+let PARSE_TOTAL_MATCHES_KEY = "totalMatches"
+
+let PARSE_USER_UPDATED_KEY = "updatedAt"
 
 class ParseHelper: NSObject {
     
@@ -95,6 +101,17 @@ class ParseHelper: NSObject {
         //query.includeKey(PARSE_STRING_GUESS_KEY)
         
         query.findObjectsInBackgroundWithBlock(completionBlock)
+    }
+    
+    static func fetchRandomUsers(completionBlock: PFArrayResultBlock) {
+        
+        if let query = PFUser.query() {
+            
+            query.orderByAscending(PARSE_USER_UPDATED_KEY)
+        
+            query.findObjectsInBackgroundWithBlock(completionBlock)
+            
+        }
     }
     
    

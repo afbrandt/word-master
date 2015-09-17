@@ -42,8 +42,8 @@ extension MainScene: CCTableViewDataSource {
             let match = matches[Int(index)]
             match.fetchGuesses()
             cell.match = match
-            
-            cell.playButton.setTarget(self, selector: Selector("enterMatch"))
+            cell.playButton.name = "\(index)"
+            cell.playButton.setTarget(self, selector: Selector("enterMatch:"))
 //            
 //            let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
 //            label.anchorPoint = ccp(0,0)
