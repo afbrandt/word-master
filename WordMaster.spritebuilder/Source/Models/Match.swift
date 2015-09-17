@@ -14,35 +14,28 @@ class Match: PFObject, PFSubclassing {
     @NSManaged var imageFile: PFFile?
     
     var fromUser: PFUser? {
-        didSet {
-            if let user = fromUser{
-                setObject(user, forKey: PARSE_FROM_USER_KEY)
-            }
-        }
+        set { self["fromUser"] = newValue}
+        get { return self["fromUser"] as! PFUser?}
     }
     
     var toUser: PFUser? {
-        didSet {
-            if let user = toUser{
-                setObject(user, forKey: PARSE_TO_USER_KEY)
-            }
-        }
+        set { self["toUser"] = newValue}
+        get { return self["toUser"] as! PFUser?}
     }
     
     var fromUserWord: String? {
-        didSet {
-            if let word = fromUserWord {
-                setObject(word, forKey: PARSE_FROM_USER_WORD_KEY)
-            }
-        }
+        set { self["fromUserWord"] = newValue}
+        get { return self["fromUserWord"] as! String?}
     }
     
     var toUserWord: String? {
-        didSet {
-            if let word = toUserWord {
-                setObject(word, forKey: PARSE_TO_USER_WORD_KEY)
-            }
-        }
+        set { self["toUserWord"] = newValue}
+        get { return self["toUserWord"] as! String?}
+    }
+    
+    var isReady: Bool {
+        set { self["isReady"] = newValue}
+        get { return self["isReady"] as! Bool}
     }
     
     var isCurrentUsersTurn: Bool = false
@@ -66,9 +59,13 @@ class Match: PFObject, PFSubclassing {
     }
     
     func uploadMatch() {
-        
         fromUser = PFUser.currentUser()
+        isReady = false
         
+        saveMatch()
+    }
+    
+    func saveMatch() {
         matchUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({ () -> Void in
             UIApplication.sharedApplication().endBackgroundTask(self.matchUploadTask!)
         })
@@ -87,7 +84,6 @@ class Match: PFObject, PFSubclassing {
             }
             
         }
-        
     }
     
     func fetchGuesses() {

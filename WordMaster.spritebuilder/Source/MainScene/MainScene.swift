@@ -8,6 +8,8 @@
 
 import Foundation
 
+let MATCH_BUILT = "Built a match!"
+
 class MainScene: CCNode {
 
     let fbMgr = FacebookHelper.sharedInstance
@@ -71,7 +73,14 @@ class MainScene: CCNode {
         }
         
         userInteractionEnabled = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("buildWord:"), name: MATCH_BUILT, object: nil)
         
+        
+    }
+    
+    override func onExit() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        super.onExit()
     }
     
     func startLogin() {
@@ -99,7 +108,8 @@ class MainScene: CCNode {
     func buildMatch() {
         println("create a new match")
         //target user
-        ParseHelper.fetchRandomUsers { (var result: [AnyObject]?, error: NSError?) -> Void in
+        ParseHelper.fetchRandomUsers
+        { (var result: [AnyObject]?, error: NSError?) -> Void in
             if let error = error {
                 println("something bad happened")
             }
@@ -110,15 +120,44 @@ class MainScene: CCNode {
                     let match = Match()
                     let index = Int(arc4random()) % count
                     let user = users[index]
+                    
                     match.toUser = user
-                    match.uploadMatch()
+                    //match.uploadMatch()
+                    NSNotificationCenter.defaultCenter().postNotificationName(MATCH_BUILT, object: match)
                 }
             } else {
                 println("random user fetch came back with an unexpected result")
             }
         }
-        //create word
-        //upload match
+    }
+    
+    func buildWord(message: NSNotification) {
+        
+        if let match = message.object as? Match {
+            promptWordInputForMatch(match)
+        }
+        
+    }
+    
+    func promptWordInputForMatch(match: Match) {
+        //TODO: gui deal that takes user input...
+        insertWord("hello", toMatch: match)
+    }
+    
+    func insertWord(word: String, toMatch match: Match) {
+        if let existingWord = match.fromUserWord {
+            //is an existing match, need opponent word
+            match.toUserWord = word
+            match.saveMatch()
+            //start game, transition to gameplay
+            
+        } else {
+            //newly created match, need match creator's word
+            match.fromUserWord = word
+            match.uploadMatch()
+            //show new match in table
+        }
+        
     }
     
     func refreshMatches() {

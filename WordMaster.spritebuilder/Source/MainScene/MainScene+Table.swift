@@ -43,6 +43,7 @@ extension MainScene: CCTableViewDataSource {
             match.fetchGuesses()
             cell.match = match
             cell.playButton.name = "\(index)"
+            
             cell.playButton.setTarget(self, selector: Selector("enterMatch:"))
 //            
 //            let label = CCLabelTTF(string: "Hello", fontName: "ArialMT", fontSize: 24.0)
