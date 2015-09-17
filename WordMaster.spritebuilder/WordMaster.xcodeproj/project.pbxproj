@@ -10,6 +10,7 @@
 		490E455C1B895EB0003FF9C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */; };
 		490E455D1B895EB0003FF9C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */; };
 		490E455E1B895EB0003FF9C8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */; };
+		49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49287A071BAB6FF600D953CE /* WordHelper.swift */; };
 		493D09671B90602300865B84 /* MatchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D09661B90602300865B84 /* MatchTableCell.swift */; };
 		496CA3351B8886B5003CED79 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CA3341B8886B5003CED79 /* Gameplay.swift */; };
 		496CA3371B8889F0003CED79 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496CA3361B8889F0003CED79 /* GameKit.framework */; };
@@ -175,6 +176,7 @@
 		490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		49287A071BAB6FF600D953CE /* WordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordHelper.swift; sourceTree = "<group>"; };
 		493D09661B90602300865B84 /* MatchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableCell.swift; sourceTree = "<group>"; };
 		496CA3341B8886B5003CED79 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gameplay.swift; path = Source/Gameplay.swift; sourceTree = "<group>"; };
 		496CA3361B8889F0003CED79 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -364,6 +366,7 @@
 				49EFDB1E1B89DA1C00CA4991 /* ParseHelper.swift */,
 				49EFDB1F1B89DA1C00CA4991 /* FacebookHelper.swift */,
 				49EFDB201B89DA1C00CA4991 /* GameKitHelper.swift */,
+				49287A071BAB6FF600D953CE /* WordHelper.swift */,
 			);
 			name = Helpers;
 			path = Source/Helpers;
@@ -938,6 +941,7 @@
 				493D09671B90602300865B84 /* MatchTableCell.swift in Sources */,
 				49EFDB271B89DA6700CA4991 /* Match.swift in Sources */,
 				49EFDB251B89DA3800CA4991 /* MainScene.swift in Sources */,
+				49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */,
 				49EFDB291B89DA7C00CA4991 /* Guess.swift in Sources */,
 				49EFDB221B89DA1C00CA4991 /* FacebookHelper.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,

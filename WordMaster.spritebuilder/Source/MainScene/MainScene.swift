@@ -21,8 +21,10 @@ class MainScene: CCNode {
     
     var tableContainer: CCClippingNode!
     var tableStencil: CCNodeColor!
+    var textInputField: CCTextField!
     
     var matches: [Match] = []
+    var pendingMatch: Match?
     
     override func onEnter() {
         super.onEnter()
@@ -87,22 +89,29 @@ class MainScene: CCNode {
         fbMgr.tryLoginViaParse()
     }
     
-    func enterMatch(button: CCButton) {
+    func continueMatch(button: CCButton) {
         println("enter an existing match")
         
         if let index = button.name.toInt() {
         
-            let gameplay = CCBReader.load("Gameplay") as! Gameplay
-            let scene = CCScene()
-            //let index = Int(tableNode.selectedRow)
             let match = matches[index]
-            
-            gameplay.match = match
-            scene.addChild(gameplay)
-            
-    //        CCDirector.sharedDirector().replaceScene(scene)
-            CCDirector.sharedDirector().pushScene(scene)
+            if match.isReady {
+                pushMatch(match)
+            } else {
+                promptWordInputForMatch(match)
+            }
         }
+    }
+    
+    func pushMatch(match: Match) {
+        let gameplay = CCBReader.load("Gameplay") as! Gameplay
+        let scene = CCScene()
+        //let index = Int(tableNode.selectedRow)
+        gameplay.match = match
+        scene.addChild(gameplay)
+        
+//        CCDirector.sharedDirector().replaceScene(scene)
+        CCDirector.sharedDirector().pushScene(scene)
     }
     
     func buildMatch() {
@@ -141,16 +150,27 @@ class MainScene: CCNode {
     
     func promptWordInputForMatch(match: Match) {
         //TODO: gui deal that takes user input...
-        insertWord("hello", toMatch: match)
+        //insertWord("hello", toMatch: match)
+        pendingMatch = match
+        animationManager.runAnimationsForSequenceNamed("PresentDialog")
+    }
+    
+    func userSubmitWord() {
+        if let string = textInputField.string {
+            if WordHelper.isWordValid(string) {
+                animationManager.runAnimationsForSequenceNamed("HideDialog")
+                insertWord(string, toMatch: pendingMatch!)
+            }
+        }
     }
     
     func insertWord(word: String, toMatch match: Match) {
         if let existingWord = match.fromUserWord {
             //is an existing match, need opponent word
             match.toUserWord = word
+            match.isReady = true
             match.saveMatch()
             //start game, transition to gameplay
-            
         } else {
             //newly created match, need match creator's word
             match.fromUserWord = word
