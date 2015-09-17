@@ -149,18 +149,26 @@ class MainScene: CCNode {
     }
     
     func promptWordInputForMatch(match: Match) {
-        //TODO: gui deal that takes user input...
         //insertWord("hello", toMatch: match)
         pendingMatch = match
         animationManager.runAnimationsForSequenceNamed("PresentDialog")
     }
     
     func userSubmitWord() {
+        var isInvalid = false
         if let string = textInputField.string {
             if WordHelper.isWordValid(string) {
                 animationManager.runAnimationsForSequenceNamed("HideDialog")
                 insertWord(string, toMatch: pendingMatch!)
+            } else {
+                isInvalid = true
             }
+        } else {
+            isInvalid = true
+        }
+        
+        if isInvalid {
+            //alert user to retry
         }
     }
     
@@ -171,6 +179,7 @@ class MainScene: CCNode {
             match.isReady = true
             match.saveMatch()
             //start game, transition to gameplay
+            pushMatch(match)
         } else {
             //newly created match, need match creator's word
             match.fromUserWord = word

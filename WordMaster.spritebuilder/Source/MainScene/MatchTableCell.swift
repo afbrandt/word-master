@@ -21,10 +21,10 @@ class MatchTableCell: CCTableViewCell {
             var opponentString = ""
             if PFUser.currentUser() == fromUser {
                 //this user initiated the match
-                opponentString = fromUser.username!
+                //opponentString = fromUser.username!
             } else {
                 //opponent initiated the match
-                opponentString = toUser.username!
+                //opponentString = toUser.username ?? "Anonymous"
             }
         }
         

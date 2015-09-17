@@ -31,6 +31,7 @@ let PARSE_USERNAME_KEY = "username"
 let PARSE_TOTAL_MATCHES_KEY = "totalMatches"
 
 let PARSE_USER_UPDATED_KEY = "updatedAt"
+let PARSE_MATCH_ISREADY_KEY = "isReady"
 
 class ParseHelper: NSObject {
     

@@ -11,29 +11,21 @@ import UIKit
 class Guess: PFObject, PFSubclassing {
 
     var owner: PFUser? {
-        didSet {
-            if let user = owner {
-                setObject(user, forKey: PARSE_OWNER_GUESS_KEY)
-            }
-        }
+        set { self[PARSE_OWNER_GUESS_KEY] = newValue }
+        get { return self[PARSE_OWNER_GUESS_KEY] as! PFUser?}
     }
     
     var match: Match? {
-        didSet {
-            if let match = match {
-                setObject(match, forKey: PARSE_GUESS_MATCH_KEY)
-            }
-        }
+        set { self[PARSE_GUESS_MATCH_KEY] = newValue }
+        get { return self[PARSE_GUESS_MATCH_KEY] as! Match? }
     }
+    
     var string: String? {
-        didSet {
-            if let string = string {
-                setObject(string, forKey: PARSE_STRING_GUESS_KEY)
-            }
-        }
+        set { self[PARSE_STRING_GUESS_KEY] = newValue }
+        get { return self[PARSE_STRING_GUESS_KEY] as! String? }
     }
 
-    var postUploadTask: UIBackgroundTaskIdentifier?
+    var guessUploadTask: UIBackgroundTaskIdentifier?
     
     static func parseClassName() -> String {
         return "Guess"
@@ -53,8 +45,8 @@ class Guess: PFObject, PFSubclassing {
         
             owner = PFUser.currentUser()
             
-            postUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({ () -> Void in
-                UIApplication.sharedApplication().endBackgroundTask(self.postUploadTask!)
+            guessUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({ () -> Void in
+                UIApplication.sharedApplication().endBackgroundTask(self.guessUploadTask!)
             })
             
             saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
@@ -63,7 +55,7 @@ class Guess: PFObject, PFSubclassing {
                     //something bad happened
                 }
                 
-                UIApplication.sharedApplication().endBackgroundTask(self.postUploadTask!)
+                UIApplication.sharedApplication().endBackgroundTask(self.guessUploadTask!)
                 
                 if success {
                     //created match successfully

@@ -15,10 +15,10 @@ class Gameplay: CCNode {
     override func onEnter() {
         super.onEnter()
         
-        let guess = Guess()
-        guess.match = match
-        guess.string = "Hello peeps"
-        guess.uploadGuess()
+//        let guess = Guess()
+//        guess.match = match
+//        guess.string = "Hello peeps"
+//        guess.uploadGuess()
         
     }
     

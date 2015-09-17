@@ -14,28 +14,28 @@ class Match: PFObject, PFSubclassing {
     @NSManaged var imageFile: PFFile?
     
     var fromUser: PFUser? {
-        set { self["fromUser"] = newValue}
-        get { return self["fromUser"] as! PFUser?}
+        set { self[PARSE_FROM_USER_KEY] = newValue }
+        get { return self[PARSE_FROM_USER_KEY] as! PFUser? }
     }
     
     var toUser: PFUser? {
-        set { self["toUser"] = newValue}
-        get { return self["toUser"] as! PFUser?}
+        set { self[PARSE_TO_USER_KEY] = newValue }
+        get { return self[PARSE_TO_USER_KEY] as! PFUser? }
     }
     
     var fromUserWord: String? {
-        set { self["fromUserWord"] = newValue}
-        get { return self["fromUserWord"] as! String?}
+        set { self[PARSE_FROM_USER_WORD_KEY] = newValue }
+        get { return self[PARSE_FROM_USER_WORD_KEY] as! String? }
     }
     
     var toUserWord: String? {
-        set { self["toUserWord"] = newValue}
-        get { return self["toUserWord"] as! String?}
+        set { self[PARSE_TO_USER_WORD_KEY] = newValue}
+        get { return self[PARSE_TO_USER_WORD_KEY] as! String? }
     }
     
     var isReady: Bool {
-        set { self["isReady"] = newValue}
-        get { return self["isReady"] as! Bool}
+        set { self[PARSE_MATCH_ISREADY_KEY] = newValue}
+        get { return self[PARSE_MATCH_ISREADY_KEY] as! Bool }
     }
     
     var isCurrentUsersTurn: Bool = false
@@ -80,7 +80,7 @@ class Match: PFObject, PFSubclassing {
             
             if success {
                 //created match successfully
-                println("created match OK")
+                println("saved match OK")
             }
             
         }
