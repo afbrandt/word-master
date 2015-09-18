@@ -51,7 +51,7 @@ extension MainScene: CCTableViewDataSource {
 //            label.anchorPoint = ccp(0,0)
 //            cell.addChild(label)
             
-            println("created cell")
+            print("created cell")
 //            cell.color = CCColor.whiteColor()
             
         }

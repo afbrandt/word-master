@@ -80,7 +80,7 @@ class Match: PFObject, PFSubclassing {
             
             if success {
                 //created match successfully
-                println("saved match OK")
+                print("saved match OK")
             }
             
         }
@@ -91,7 +91,7 @@ class Match: PFObject, PFSubclassing {
         { (result: [AnyObject]?, error: NSError?) -> Void in
             if let guesses = result as? [Guess] {
                 self.guesses = guesses
-                println("retrieved guesses")
+                print("retrieved guesses")
             }
         }
     }

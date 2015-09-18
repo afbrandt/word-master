@@ -90,9 +90,9 @@ class MainScene: CCNode {
     }
     
     func continueMatch(button: CCButton) {
-        println("enter an existing match")
+        print("enter an existing match")
         
-        if let index = button.name.toInt() {
+        if let index = Int(button.name) {
         
             let match = matches[index]
             if match.isReady {
@@ -115,12 +115,12 @@ class MainScene: CCNode {
     }
     
     func buildMatch() {
-        println("create a new match")
+        print("create a new match")
         //target user
         ParseHelper.fetchRandomUsers
-        { (var result: [AnyObject]?, error: NSError?) -> Void in
+        { (result: [AnyObject]?, error: NSError?) -> Void in
             if let error = error {
-                println("something bad happened")
+                print("something bad happened")
             }
             
             if let users = result as? [PFUser] {
@@ -135,7 +135,7 @@ class MainScene: CCNode {
                     NSNotificationCenter.defaultCenter().postNotificationName(MATCH_BUILT, object: match)
                 }
             } else {
-                println("random user fetch came back with an unexpected result")
+                print("random user fetch came back with an unexpected result")
             }
         }
     }

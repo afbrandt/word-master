@@ -59,7 +59,7 @@ class Guess: PFObject, PFSubclassing {
                 
                 if success {
                     //created match successfully
-                    println("created guess OK")
+                    print("created guess OK")
                 }
                 
             }

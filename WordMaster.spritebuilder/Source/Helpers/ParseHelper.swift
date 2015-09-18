@@ -78,7 +78,7 @@ class ParseHelper: NSObject {
         matchQuery.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if let guesses = result as? [Guess] {
                 //self.delegate?.retrievedMatchResults(matches)
-                println("retrieved guesses")
+                print("retrieved guesses")
             }
         }
     }

@@ -30,15 +30,15 @@ class FacebookHelper: NSObject {
     
     func tryLogin() {
         
-        var permission = ["email", "friend_list"]
+        let permission = ["email", "friend_list"]
         
         manager.logInWithReadPermissions(permission, handler: { (result: FBSDKLoginManagerLoginResult!, error) -> Void in
             if error != nil {
-                println("error logging in")
+                print("error logging in")
             } else if result.isCancelled {
-                println("user cancelled login")
+                print("user cancelled login")
             } else {
-                println("probably normal login")
+                print("probably normal login")
             }
         })
     }
@@ -51,18 +51,18 @@ class FacebookHelper: NSObject {
         { (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
-                    println("successful new user")
+                    print("successful new user")
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         delegate?.successfulRegistration()
                     })
                 } else {
-                    println("successful login")
+                    print("successful login")
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         delegate?.successfulLogin()
                     })
                 }
             } else {
-                println("failed login")
+                print("failed login")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     delegate?.failedLogin()
                 })
@@ -78,7 +78,7 @@ class FacebookHelper: NSObject {
         request.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection?, result: AnyObject?, error: NSError?) -> Void in
             if error == nil {
                 if let dict = result as? NSDictionary {
-                    println("user info - facebook graph request OK")
+                    print("user info - facebook graph request OK")
                     
                 }
             }
@@ -93,7 +93,7 @@ class FacebookHelper: NSObject {
         request.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection?, result: AnyObject?, error: NSError?) -> Void in
             if error == nil {
                 if let dict = result as? NSDictionary {
-                    println("user friends - facebook graph request OK")
+                    print("user friends - facebook graph request OK")
                     
                 }
             }

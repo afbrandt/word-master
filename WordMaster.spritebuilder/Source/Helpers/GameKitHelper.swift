@@ -51,45 +51,45 @@ class GameKitHelper: NSObject, GKGameCenterControllerDelegate, GKLocalPlayerList
         
         delegate?.willSignIn()
         
-        player.authenticateHandler = {(viewController : UIViewController!, error : NSError!) -> Void in
+        player.authenticateHandler = { (viewController : UIViewController?, error : NSError?) -> Void in
 
             if (viewController != nil)
             {
                dispatch_async(dispatch_get_main_queue(), {
-                   self.showAuthenticationDialogueWhenReasonable(presentingViewController: CCDirector.sharedDirector().parentViewController!, gameCenterController: viewController)
+                   self.showAuthenticationDialogueWhenReasonable(presentingViewController: CCDirector.sharedDirector().parentViewController!, gameCenterController: viewController!)
                })
             }
 
             else if (self.player.authenticated == true)
             {
-               println("Player is Authenticated")
+               print("Player is Authenticated", terminator: "")
                self.player.registerListener(self)
                self.delegate?.didSignIn()
             }
 
             else
             {
-               println("User Still Not Authenticated")
+               print("User Still Not Authenticated", terminator: "")
                self.delegate?.failedToSignIn()
             }
 
-            if (error != nil)
+            if let error = error
             {
-               println("Failed to sign in with error:\(error.localizedDescription).")
+               print("Failed to sign in with error:\(error.localizedDescription).", terminator: "")
                self.delegate?.failedToSignInWithError(error)
                // Delegate can take necessary action. For example: present a UIAlertController with the error details.
             }
         }
         
     }
-    
-    func showAuthenticationDialogueWhenReasonable(#presentingViewController:UIViewController, gameCenterController:UIViewController)
+
+    func showAuthenticationDialogueWhenReasonable(presentingViewController presentingViewController:UIViewController, gameCenterController:UIViewController)
     {
         presentingViewController.presentViewController(gameCenterController, animated: true, completion: nil)
     }
     
     //MARK: GKGameCenterControllerDelegate method
-    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
