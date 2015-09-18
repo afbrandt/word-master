@@ -13,14 +13,24 @@ class GuessTableCell: CCTableViewCell {
     var guess: Guess?
     
     //code connected elements
-    var guessLabel: CCLabelTTF!
+    var fromUserLabel: CCLabelTTF!
+    var fromUserBubble: CCSprite!
+    
+    var toUserLabel: CCLabelTTF!
+    var toUserBubble: CCSprite!
     
     override func onEnter() {
         
         super.onEnter()
         
         if let guess = guess {
-            guessLabel.string = guess.string!
+            if guess.owner!.objectId == PFUser.currentUser()?.objectId {
+                fromUserLabel.string = guess.string!
+                toUserBubble.visible = false
+            } else {
+                toUserLabel.string = guess.string!
+                fromUserBubble.visible = false
+            }
         }
     
     }
