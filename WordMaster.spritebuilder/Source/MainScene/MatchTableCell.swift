@@ -29,7 +29,7 @@ class MatchTableCell: CCTableViewCell {
         }
         
         if let match = match {
-            opponentName.string = match["fromUserWord"] as! String
+            opponentName.string = match[PARSE_FROM_USER_WORD_KEY] as! String
         }
         
         

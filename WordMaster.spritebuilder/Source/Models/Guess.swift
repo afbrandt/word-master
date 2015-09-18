@@ -12,7 +12,7 @@ class Guess: PFObject, PFSubclassing {
 
     var owner: PFUser? {
         set { self[PARSE_OWNER_GUESS_KEY] = newValue }
-        get { return self[PARSE_OWNER_GUESS_KEY] as! PFUser?}
+        get { return self[PARSE_OWNER_GUESS_KEY] as! PFUser? }
     }
     
     var match: Match? {

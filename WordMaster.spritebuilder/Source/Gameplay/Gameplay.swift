@@ -12,6 +12,11 @@ class Gameplay: CCNode {
 
     var match: Match?
     
+    //code connected elements
+    var tableNode: CCTableView!
+    var tableContainer: CCClippingNode!
+    var tableStencil: CCNodeColor!
+    
     override func onEnter() {
         super.onEnter()
         
@@ -19,7 +24,12 @@ class Gameplay: CCNode {
 //        guess.match = match
 //        guess.string = "Hello peeps"
 //        guess.uploadGuess()
+        tableContainer.stencil = tableStencil
+        tableContainer.alphaThreshold = 0.0
         
+        tableNode.dataSource = self
+        userInteractionEnabled = true
+
     }
     
     func closeMatch() {

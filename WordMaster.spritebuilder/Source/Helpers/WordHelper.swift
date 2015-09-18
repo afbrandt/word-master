@@ -11,7 +11,13 @@ import Foundation
 class WordHelper {
     
     static func isWordValid(word: String) -> Bool {
+        
+        //validate length of string
+        //load plist, or make web request?
+        //verify word exists
+        
         return true
+        
     }
     
 }
