@@ -12,13 +12,28 @@ class LetterSelector: CCNode {
 
     var scrollView: CCScrollView!
     
-    var letters: CCNode?
+    var letterGrid: LetterGrid?
     
     override func onEnter() {
         super.onEnter()
         
+        if let grid = scrollView.contentNode as? LetterGrid {
+            letterGrid = grid
+            print("grid found OK")
+        }
+        
         scrollView.delegate = self
         //print("loaded")
+    }
+    
+    
+    func jumpToLetter(letter: String) {
+        if let grid = letterGrid {
+            let yPosition = grid.positionOfLetter(letter)
+            let xPosition = scrollView.scrollPosition.x
+            let newPosition = ccp(xPosition, yPosition)
+            scrollView.setScrollPosition(newPosition, animated: true)
+        }
     }
 
 }
@@ -26,10 +41,18 @@ class LetterSelector: CCNode {
 extension LetterSelector: CCScrollViewDelegate {
 
     func scrollViewDidEndDecelerating(scrollView: CCScrollView!) {
-        let position = scrollView.scrollPosition
+        let position = scrollView.scrollPosition.y
         let letterHeight = 33.8 as CGFloat
-        print("stopped moving at \(Int(position.y/letterHeight))")
+        
+        if let grid = letterGrid {
+            let letter = grid.letterAtPosition(position)
+            print("stopped moving at letter \(letter)")
+            
+            jumpToLetter("A")
+        } 
+//        print("stopped moving at \(Int(position.y/letterHeight))")
 //        print("scroll view at y: \(position.y)")
     }
+    
     
 }
