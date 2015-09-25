@@ -10,10 +10,13 @@
 		490E455C1B895EB0003FF9C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */; };
 		490E455D1B895EB0003FF9C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */; };
 		490E455E1B895EB0003FF9C8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */; };
+		491E74571BAEAE540073D240 /* WordSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E74561BAEAE530073D240 /* WordSelector.swift */; settings = {ASSET_TAGS = (); }; };
+		491E74591BAEAF500073D240 /* LetterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E74581BAEAF500073D240 /* LetterSelector.swift */; settings = {ASSET_TAGS = (); }; };
 		49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49287A071BAB6FF600D953CE /* WordHelper.swift */; };
 		49287A0D1BAB8B5100D953CE /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49287A0C1BAB8B5100D953CE /* Gameplay.swift */; };
 		49287A0F1BAB8B7B00D953CE /* Gameplay+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49287A0E1BAB8B7B00D953CE /* Gameplay+Table.swift */; };
 		49287A111BAB8C5800D953CE /* GuessTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49287A101BAB8C5800D953CE /* GuessTableCell.swift */; };
+		493A55851BB4E25C00AC6F31 /* LetterGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A55841BB4E25B00AC6F31 /* LetterGrid.swift */; settings = {ASSET_TAGS = (); }; };
 		493D09671B90602300865B84 /* MatchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D09661B90602300865B84 /* MatchTableCell.swift */; };
 		496CA3371B8889F0003CED79 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496CA3361B8889F0003CED79 /* GameKit.framework */; };
 		49EFDAFE1B896B5C00CA4991 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDAFD1B896B5C00CA4991 /* Parse.framework */; };
@@ -178,10 +181,13 @@
 		490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		491E74561BAEAE530073D240 /* WordSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSelector.swift; sourceTree = "<group>"; };
+		491E74581BAEAF500073D240 /* LetterSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterSelector.swift; sourceTree = "<group>"; };
 		49287A071BAB6FF600D953CE /* WordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordHelper.swift; sourceTree = "<group>"; };
 		49287A0C1BAB8B5100D953CE /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		49287A0E1BAB8B7B00D953CE /* Gameplay+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gameplay+Table.swift"; sourceTree = "<group>"; };
 		49287A101BAB8C5800D953CE /* GuessTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessTableCell.swift; sourceTree = "<group>"; };
+		493A55841BB4E25B00AC6F31 /* LetterGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterGrid.swift; sourceTree = "<group>"; };
 		493D09661B90602300865B84 /* MatchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableCell.swift; sourceTree = "<group>"; };
 		496CA3361B8889F0003CED79 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		49EFDAFD1B896B5C00CA4991 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -342,6 +348,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491E74551BAEADA20073D240 /* WordSelector */ = {
+			isa = PBXGroup;
+			children = (
+				491E74561BAEAE530073D240 /* WordSelector.swift */,
+				491E74581BAEAF500073D240 /* LetterSelector.swift */,
+				493A55841BB4E25B00AC6F31 /* LetterGrid.swift */,
+			);
+			name = WordSelector;
+			path = Source/WordSelector;
+			sourceTree = "<group>";
+		};
 		49287A0B1BAB8B5100D953CE /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,10 +568,11 @@
 			isa = PBXGroup;
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
-				49EFDB1D1B89D9F900CA4991 /* Helpers */,
 				49EFDB1B1B89D9C600CA4991 /* MainScene */,
 				49287A0B1BAB8B5100D953CE /* Gameplay */,
+				49EFDB1D1B89D9F900CA4991 /* Helpers */,
 				49EFDB1C1B89D9C600CA4991 /* Models */,
+				491E74551BAEADA20073D240 /* WordSelector */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -957,13 +975,16 @@
 				493D09671B90602300865B84 /* MatchTableCell.swift in Sources */,
 				49287A0F1BAB8B7B00D953CE /* Gameplay+Table.swift in Sources */,
 				49EFDB271B89DA6700CA4991 /* Match.swift in Sources */,
+				491E74591BAEAF500073D240 /* LetterSelector.swift in Sources */,
 				49EFDB251B89DA3800CA4991 /* MainScene.swift in Sources */,
 				49287A0D1BAB8B5100D953CE /* Gameplay.swift in Sources */,
 				49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */,
 				49287A111BAB8C5800D953CE /* GuessTableCell.swift in Sources */,
+				491E74571BAEAE540073D240 /* WordSelector.swift in Sources */,
 				49EFDB291B89DA7C00CA4991 /* Guess.swift in Sources */,
 				49EFDB221B89DA1C00CA4991 /* FacebookHelper.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				493A55851BB4E25C00AC6F31 /* LetterGrid.swift in Sources */,
 				49EFDB2B1B8ABBFC00CA4991 /* MainScene+Table.swift in Sources */,
 				49EFDB211B89DA1C00CA4991 /* ParseHelper.swift in Sources */,
 			);
@@ -1194,6 +1215,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1211,7 +1233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1229,6 +1251,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1243,7 +1266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

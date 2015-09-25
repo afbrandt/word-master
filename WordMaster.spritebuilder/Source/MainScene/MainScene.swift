@@ -43,6 +43,7 @@ class MainScene: CCNode {
             let count = Int(self.matches.count)
             if index == count {
                 self.buildMatch()
+                
             }
         }
         
@@ -120,7 +121,7 @@ class MainScene: CCNode {
         ParseHelper.fetchRandomUsers
         { (result: [AnyObject]?, error: NSError?) -> Void in
             if let error = error {
-                print("something bad happened")
+                print("something bad happened: \(error.description)")
             }
             
             if let users = result as? [PFUser] {
