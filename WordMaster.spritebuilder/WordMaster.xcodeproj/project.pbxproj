@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49007E341BBB97C100DF1494 /* GuessNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49007E331BBB97C100DF1494 /* GuessNode.swift */; settings = {ASSET_TAGS = (); }; };
 		490E455C1B895EB0003FF9C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */; };
 		490E455D1B895EB0003FF9C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */; };
 		490E455E1B895EB0003FF9C8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */; };
@@ -178,6 +179,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49007E331BBB97C100DF1494 /* GuessNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessNode.swift; sourceTree = "<group>"; };
 		490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				49287A101BAB8C5800D953CE /* GuessTableCell.swift */,
+				49007E331BBB97C100DF1494 /* GuessNode.swift */,
 				49287A0C1BAB8B5100D953CE /* Gameplay.swift */,
 				49287A0E1BAB8B7B00D953CE /* Gameplay+Table.swift */,
 			);
@@ -980,6 +983,7 @@
 				49287A0D1BAB8B5100D953CE /* Gameplay.swift in Sources */,
 				49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */,
 				49287A111BAB8C5800D953CE /* GuessTableCell.swift in Sources */,
+				49007E341BBB97C100DF1494 /* GuessNode.swift in Sources */,
 				491E74571BAEAE540073D240 /* WordSelector.swift in Sources */,
 				49EFDB291B89DA7C00CA4991 /* Guess.swift in Sources */,
 				49EFDB221B89DA1C00CA4991 /* FacebookHelper.swift in Sources */,
@@ -1297,7 +1301,7 @@
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -1337,7 +1341,7 @@
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lz",

@@ -18,6 +18,7 @@ class WordSelector: CCNode {
     
     var clippingNode: CCClippingNode!
     var clippingStencil: CCNodeColor!
+    var wordSubmitButton: CCButton!
     
     override func onEnter() {
         super.onEnter()
@@ -25,6 +26,17 @@ class WordSelector: CCNode {
         clippingNode.stencil = clippingStencil
         clippingNode.alphaThreshold = 0.0
         
+    }
+    
+    func buildWord() {
+        let word = "\(letter1.currentLetter)\(letter2.currentLetter)\(letter3.currentLetter)\(letter4.currentLetter)\(letter5.currentLetter)"
+        print("built word: \(word)")
+        let valid = WordHelper.isWordValid(word)
+        if valid {
+            NSNotificationCenter.defaultCenter().postNotificationName(WORD_BUILT, object: word)
+        } else {
+            //tell user to pick another word
+        }
     }
 
 }

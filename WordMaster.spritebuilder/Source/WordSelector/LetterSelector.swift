@@ -13,6 +13,7 @@ class LetterSelector: CCNode {
     var scrollView: CCScrollView!
     
     var letterGrid: LetterGrid?
+    var currentLetter: String = "A"
     
     override func onEnter() {
         super.onEnter()
@@ -22,10 +23,16 @@ class LetterSelector: CCNode {
             print("grid found OK")
         }
         
+        scrollView.addObserver(self, forKeyPath: "scrollPosition", options: [.New], context: nil)
         scrollView.delegate = self
         //print("loaded")
     }
     
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "scrollPosition" {
+            print("noticed scroll position change")
+        }
+    }
     
     func jumpToLetter(letter: String) {
         if let grid = letterGrid {
@@ -42,14 +49,14 @@ extension LetterSelector: CCScrollViewDelegate {
 
     func scrollViewDidEndDecelerating(scrollView: CCScrollView!) {
         let position = scrollView.scrollPosition.y
-        let letterHeight = 33.8 as CGFloat
+//        let letterHeight = 33.8 as CGFloat
         
         if let grid = letterGrid {
             let letter = grid.letterAtPosition(position)
             print("stopped moving at letter \(letter)")
-            
-            jumpToLetter("A")
-        } 
+            currentLetter = letter
+//            jumpToLetter("A")
+        }
 //        print("stopped moving at \(Int(position.y/letterHeight))")
 //        print("scroll view at y: \(position.y)")
     }

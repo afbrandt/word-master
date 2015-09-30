@@ -9,6 +9,7 @@
 import Foundation
 
 let MATCH_BUILT = "Built a match!"
+let WORD_BUILT = "Built a word!"
 
 class MainScene: CCNode {
 
@@ -47,6 +48,7 @@ class MainScene: CCNode {
             }
         }
         
+//        tableStencil.
         tableContainer.stencil = tableStencil
         tableContainer.alphaThreshold = 0.0
         
@@ -174,7 +176,7 @@ class MainScene: CCNode {
     }
     
     func insertWord(word: String, toMatch match: Match) {
-        if let existingWord = match.fromUserWord {
+        if let _ = match.fromUserWord {
             //is an existing match, need opponent word
             match.toUserWord = word
             match.isReady = true
@@ -191,7 +193,7 @@ class MainScene: CCNode {
     }
     
     func refreshMatches() {
-        ParseHelper.fetchMatchesForUser(PFUser.currentUser()!)
+        ParseHelper.fetchMatchesForUser(PFUser.currentUser()!, includeFinished: false)
         { (result: [AnyObject]?, error: NSError?) -> Void in
             if let matches = result as? [Match] {
                 self.matches = matches

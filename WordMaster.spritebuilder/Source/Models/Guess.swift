@@ -41,7 +41,7 @@ class Guess: PFObject, PFSubclassing {
     
     func uploadGuess() {
     
-        if let match = match {
+        if match != nil {
         
             owner = PFUser.currentUser()
             
@@ -53,6 +53,7 @@ class Guess: PFObject, PFSubclassing {
 
                 if let error = error {
                     //something bad happened
+                    print("error: \(error.description)")
                 }
                 
                 UIApplication.sharedApplication().endBackgroundTask(self.guessUploadTask!)

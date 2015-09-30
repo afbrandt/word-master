@@ -38,6 +38,16 @@ class Match: PFObject, PFSubclassing {
         get { return self[PARSE_MATCH_ISREADY_KEY] as! Bool }
     }
     
+    var isFinished: Bool {
+        set { self[PARSE_MATCH_ISFINISHED_KEY] = newValue}
+        get { return self[PARSE_MATCH_ISFINISHED_KEY] as! Bool }
+    }
+    
+    var lastGuess: Guess? {
+        set { self[PARSE_MATCH_LASTGUESS_KEY] = newValue}
+        get { return self[PARSE_MATCH_LASTGUESS_KEY] as! Guess? }
+    }
+    
     var isCurrentUsersTurn: Bool = false
     
     var attempts: Int = 0
@@ -74,6 +84,7 @@ class Match: PFObject, PFSubclassing {
 
             if let error = error {
                 //something bad happened
+                print("error saving: \(error.description)")
             }
             
             UIApplication.sharedApplication().endBackgroundTask(self.matchUploadTask!)

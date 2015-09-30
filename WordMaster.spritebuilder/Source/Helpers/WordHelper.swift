@@ -16,7 +16,14 @@ class WordHelper {
         //load plist, or make web request?
         //verify word exists
         
+        
         return true
+        
+    }
+    
+    static func commonCharactersForGuess(guess: Guess, inMatch match: Match) -> Int {
+        
+        return 0
         
     }
     

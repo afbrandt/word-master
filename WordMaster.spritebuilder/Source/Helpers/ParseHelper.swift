@@ -32,6 +32,8 @@ let PARSE_TOTAL_MATCHES_KEY = "totalMatches"
 
 let PARSE_USER_UPDATED_KEY = "updatedAt"
 let PARSE_MATCH_ISREADY_KEY = "isReady"
+let PARSE_MATCH_ISFINISHED_KEY = "isFinished"
+let PARSE_MATCH_LASTGUESS_KEY = "lastGuess"
 
 class ParseHelper: NSObject {
     
@@ -83,12 +85,17 @@ class ParseHelper: NSObject {
         }
     }
     
-    static func fetchMatchesForUser(user: PFUser, completionBlock: PFArrayResultBlock) {
+    static func fetchMatchesForUser(user: PFUser, includeFinished include: Bool, completionBlock: PFArrayResultBlock) {
         let fromUserQuery = PFQuery(className: PARSE_MATCH_CLASS)
         fromUserQuery.whereKey(PARSE_FROM_USER_KEY, equalTo: user)
-        
+        if !include {
+        fromUserQuery.whereKey(PARSE_MATCH_ISFINISHED_KEY, equalTo: false)
+        }
         let toUserQuery = PFQuery(className: PARSE_MATCH_CLASS)
         toUserQuery.whereKey(PARSE_TO_USER_KEY, equalTo: user)
+        if !include {
+        toUserQuery.whereKey(PARSE_MATCH_ISFINISHED_KEY, equalTo: false)
+        }
         
         let mainQuery = PFQuery.orQueryWithSubqueries([fromUserQuery, toUserQuery])
         
