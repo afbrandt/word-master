@@ -33,6 +33,8 @@ class Gameplay: CCNode {
         super.onEnter()
         
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("guess:"), name: WORD_BUILT, object: nil)
+        
         if let match = match {
             let me = PFUser.currentUser()
             let arr = match.guesses
@@ -69,18 +71,37 @@ class Gameplay: CCNode {
 
     }
     
+    override func onExit() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        super.onExit()
+    }
+    
     func closeMatch() {
         CCDirector.sharedDirector().popScene()
     }
     
     func promptGuess() {
         
+        animationManager.runAnimationsForSequenceNamed("ShowDialog")
         
         
-        let guess = Guess()
-        guess.match = match
-        guess.string = "WUTAT"
-        guess.uploadGuess()
+    }
+    
+    func guess(message: NSNotification) {
+        
+        let string = message.object as! String
+        let isValid = WordHelper.isWordValid(string)
+        
+        if isValid {
+            
+            let guess = Guess()
+            guess.match = match
+            guess.string = string
+            guess.uploadGuess()
+            
+            animationManager.runAnimationsForSequenceNamed("HideDialog")
+        }
+        
     }
     
 }
