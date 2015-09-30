@@ -112,7 +112,7 @@ class MainScene: CCNode {
         //let index = Int(tableNode.selectedRow)
         gameplay.match = match
         scene.addChild(gameplay)
-        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
 //        CCDirector.sharedDirector().replaceScene(scene)
         CCDirector.sharedDirector().pushScene(scene)
     }

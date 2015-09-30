@@ -23,7 +23,7 @@ class LetterSelector: CCNode {
             print("grid found OK")
         }
         
-        scrollView.addObserver(self, forKeyPath: "scrollPosition", options: [.New], context: nil)
+//        scrollView.addObserver(self, forKeyPath: "scrollPosition", options: [.New], context: nil)
         scrollView.delegate = self
         //print("loaded")
     }
