@@ -100,6 +100,9 @@ class Gameplay: CCNode {
             guess.uploadGuess()
             
             animationManager.runAnimationsForSequenceNamed("HideDialog")
+            print("user chose wisely...")
+        } else {
+            
         }
         
     }

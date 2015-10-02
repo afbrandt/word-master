@@ -35,7 +35,11 @@ class WordSelector: CCNode {
         if valid {
             NSNotificationCenter.defaultCenter().postNotificationName(WORD_BUILT, object: word)
         } else {
-            //tell user to pick another word
+            let alert = UIAlertController(title: "Woops...", message: "Pick a valid word!", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alert.addAction(action)
+            CCDirector.sharedDirector().presentViewController(alert, animated: true, completion: nil)
+            print("user chose poorly...")
         }
     }
 

@@ -15,6 +15,9 @@ class GuessNode: CCNode {
     
     var guessLabel: CCLabelTTF!
     var countLabel: CCLabelTTF!
+    var countImage: CCSprite!
+    
+    var redParticle: CCParticleSystem!
     
     override func onEnter() {
         super.onEnter()
@@ -27,5 +30,11 @@ class GuessNode: CCNode {
         }
         
     }
+    
+    func startRed() {
+        redParticle.resetSystem()
+    }
+    
+    
 
 }

@@ -5547,7 +5547,7 @@
 				<key>value</key>
 				<array>
 					<real>40</real>
-					<real>1030</real>
+					<real>1020</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
@@ -5559,7 +5559,7 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.0</real>
+					<real>0.5</real>
 					<real>0.0</real>
 				</array>
 			</dict>

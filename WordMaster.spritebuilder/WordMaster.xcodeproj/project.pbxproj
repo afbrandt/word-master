@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		49007E341BBB97C100DF1494 /* GuessNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49007E331BBB97C100DF1494 /* GuessNode.swift */; settings = {ASSET_TAGS = (); }; };
+		49007E411BBCEA2400DF1494 /* dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49007E401BBCEA2300DF1494 /* dict.txt */; settings = {ASSET_TAGS = (); }; };
+		49007E581BBCF0D000DF1494 /* dict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49007E571BBCF0D000DF1494 /* dict.plist */; settings = {ASSET_TAGS = (); }; };
 		490E455C1B895EB0003FF9C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */; };
 		490E455D1B895EB0003FF9C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */; };
 		490E455E1B895EB0003FF9C8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */; };
@@ -180,6 +182,8 @@
 
 /* Begin PBXFileReference section */
 		49007E331BBB97C100DF1494 /* GuessNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessNode.swift; sourceTree = "<group>"; };
+		49007E401BBCEA2300DF1494 /* dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict.txt; sourceTree = "<group>"; };
+		49007E571BBCF0D000DF1494 /* dict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dict.plist; sourceTree = "<group>"; };
 		490E45591B895EB0003FF9C8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		490E455A1B895EB0003FF9C8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		490E455B1B895EB0003FF9C8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -350,6 +354,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49007E3F1BBCE9FD00DF1494 /* dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				49007E571BBCF0D000DF1494 /* dict.plist */,
+				49007E401BBCEA2300DF1494 /* dict.txt */,
+			);
+			path = dictionary;
+			sourceTree = "<group>";
+		};
 		491E74551BAEADA20073D240 /* WordSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +685,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49007E3F1BBCE9FD00DF1494 /* dictionary */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -892,11 +906,13 @@
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				49EFDB0E1B896D3700CA4991 /* FacebookSDKStrings.bundle in Resources */,
+				49007E411BBCEA2400DF1494 /* dict.txt in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
+				49007E581BBCF0D000DF1494 /* dict.plist in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
