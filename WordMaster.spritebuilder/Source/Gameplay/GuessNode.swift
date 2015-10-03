@@ -18,6 +18,11 @@ class GuessNode: CCNode {
     var countImage: CCSprite!
     
     var redParticle: CCParticleSystem!
+    var blueParticle: CCParticleSystem!
+    var greenParticle: CCParticleSystem!
+    var purpleParticle: CCParticleSystem!
+    var yellowParticle: CCParticleSystem!
+    
     
     override func onEnter() {
         super.onEnter()
@@ -32,9 +37,27 @@ class GuessNode: CCNode {
     }
     
     func startRed() {
+        redParticle.visible = true
         redParticle.resetSystem()
     }
     
-    
+    func startBlue() {
+        blueParticle.visible = true
+        blueParticle.resetSystem()
+    }
 
+    func startGreen() {
+        greenParticle.visible = true
+        greenParticle.resetSystem()
+    }
+    
+    func startPurple() {
+        purpleParticle.visible = true
+        purpleParticle.resetSystem()
+    }
+    
+    func startYellow() {
+        yellowParticle.visible = true
+        yellowParticle.resetSystem()
+    }
 }

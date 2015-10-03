@@ -22,6 +22,7 @@
 		493A55851BB4E25C00AC6F31 /* LetterGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A55841BB4E25B00AC6F31 /* LetterGrid.swift */; settings = {ASSET_TAGS = (); }; };
 		493D09671B90602300865B84 /* MatchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D09661B90602300865B84 /* MatchTableCell.swift */; };
 		496CA3371B8889F0003CED79 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496CA3361B8889F0003CED79 /* GameKit.framework */; };
+		49B9BA831BBF190D00F85EF4 /* MainScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9BA821BBF190D00F85EF4 /* MainScroll.swift */; settings = {ASSET_TAGS = (); }; };
 		49EFDAFE1B896B5C00CA4991 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDAFD1B896B5C00CA4991 /* Parse.framework */; };
 		49EFDB071B896C1300CA4991 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */; };
 		49EFDB091B896C1300CA4991 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB031B896C1300CA4991 /* ParseFacebookUtilsV4.framework */; };
@@ -196,6 +197,7 @@
 		493A55841BB4E25B00AC6F31 /* LetterGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterGrid.swift; sourceTree = "<group>"; };
 		493D09661B90602300865B84 /* MatchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableCell.swift; sourceTree = "<group>"; };
 		496CA3361B8889F0003CED79 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		49B9BA821BBF190D00F85EF4 /* MainScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScroll.swift; sourceTree = "<group>"; };
 		49EFDAFD1B896B5C00CA4991 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		49EFDB031B896C1300CA4991 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				49EFDB241B89DA3800CA4991 /* MainScene.swift */,
 				49EFDB2C1B8ABC1100CA4991 /* MainScene+Helper.swift */,
 				49EFDB2A1B8ABBFC00CA4991 /* MainScene+Table.swift */,
+				49B9BA821BBF190D00F85EF4 /* MainScroll.swift */,
 			);
 			name = MainScene;
 			path = Source/MainScene;
@@ -999,6 +1002,7 @@
 				49287A0D1BAB8B5100D953CE /* Gameplay.swift in Sources */,
 				49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */,
 				49287A111BAB8C5800D953CE /* GuessTableCell.swift in Sources */,
+				49B9BA831BBF190D00F85EF4 /* MainScroll.swift in Sources */,
 				49007E341BBB97C100DF1494 /* GuessNode.swift in Sources */,
 				491E74571BAEAE540073D240 /* WordSelector.swift in Sources */,
 				49EFDB291B89DA7C00CA4991 /* Guess.swift in Sources */,

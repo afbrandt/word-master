@@ -24,6 +24,8 @@ class MainScene: CCNode {
     var tableStencil: CCNodeColor!
     var textInputField: CCTextField!
     
+    var scroll: CCScrollView!
+    
     var matches: [Match] = []
     var pendingMatch: Match?
     
@@ -80,12 +82,23 @@ class MainScene: CCNode {
         userInteractionEnabled = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("buildWord:"), name: MATCH_BUILT, object: nil)
         
-        
+        resizeScroll()
     }
     
     override func onExit() {
         NSNotificationCenter.defaultCenter().removeObserver(self)
         super.onExit()
+    }
+    
+    func resizeScroll() {
+        if let node = scroll.contentNode as? MainScroll {
+            let height = node.scrollContainer.contentSizeInPoints.height
+            if height < scroll.contentSizeInPoints.height {
+                scroll.contentSizeInPoints.height = height
+            } else {
+                scroll.verticalScrollEnabled = true
+            }
+        }
     }
     
     func startLogin() {

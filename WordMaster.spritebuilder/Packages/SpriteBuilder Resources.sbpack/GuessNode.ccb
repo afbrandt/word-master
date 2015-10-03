@@ -16,7 +16,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>docDimensionsType</key>
 	<integer>1</integer>
 	<key>fileType</key>
@@ -284,12 +284,79 @@
 									<key>name</key>
 									<string>spriteFrame</string>
 									<key>time</key>
-									<real>0.46666666865348816</real>
+									<real>0.3333333432674408</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
 									<array>
 										<string>assets/penta/penta-1.png</string>
+										<string>Use regular file</string>
+									</array>
+								</dict>
+							</array>
+							<key>name</key>
+							<string>spriteFrame</string>
+							<key>type</key>
+							<integer>7</integer>
+						</dict>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>spriteFrame</key>
+						<dict>
+							<key>keyframes</key>
+							<array>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>0</integer>
+									</dict>
+									<key>name</key>
+									<string>spriteFrame</string>
+									<key>time</key>
+									<real>0.0</real>
+									<key>type</key>
+									<integer>7</integer>
+									<key>value</key>
+									<array>
+										<string>assets/penta/penta-0.png</string>
+										<string>Use regular file</string>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>0</integer>
+									</dict>
+									<key>name</key>
+									<string>spriteFrame</string>
+									<key>time</key>
+									<real>0.3333333432674408</real>
+									<key>type</key>
+									<integer>7</integer>
+									<key>value</key>
+									<array>
+										<string>assets/penta/penta-1.png</string>
+										<string>Use regular file</string>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>0</integer>
+									</dict>
+									<key>name</key>
+									<string>spriteFrame</string>
+									<key>time</key>
+									<real>0.66666668653488159</real>
+									<key>type</key>
+									<integer>7</integer>
+									<key>value</key>
+									<array>
+										<string>assets/penta/penta-2.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -619,7 +686,7 @@
 						<key>displayName</key>
 						<string>blueParticle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>blueParticle</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -914,7 +981,7 @@
 						<key>displayName</key>
 						<string>greenParticle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>greenParticle</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -1209,7 +1276,7 @@
 						<key>displayName</key>
 						<string>purpleParticle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>purpleParticle</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -1504,7 +1571,7 @@
 						<key>displayName</key>
 						<string>yellowParticle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>yellowParticle</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -2072,7 +2139,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>assets/penta/penta-0.png</string>
+							<string>assets/penta/penta-2.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2230,7 +2297,7 @@
 							<integer>0</integer>
 						</dict>
 						<key>time</key>
-						<real>0.46666666865348816</real>
+						<real>0.3333333432674408</real>
 						<key>type</key>
 						<integer>12</integer>
 						<key>value</key>
@@ -2252,7 +2319,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.46666666865348816</real>
+			<real>0.3333333432674408</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -2275,7 +2342,40 @@
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
-				<array/>
+				<array>
+					<dict>
+						<key>easing</key>
+						<dict>
+							<key>type</key>
+							<integer>0</integer>
+						</dict>
+						<key>time</key>
+						<real>0.3333333432674408</real>
+						<key>type</key>
+						<integer>12</integer>
+						<key>value</key>
+						<array>
+							<string>startRed</string>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>easing</key>
+						<dict>
+							<key>type</key>
+							<integer>0</integer>
+						</dict>
+						<key>time</key>
+						<real>0.66666668653488159</real>
+						<key>type</key>
+						<integer>12</integer>
+						<key>value</key>
+						<array>
+							<string>startBlue</string>
+							<integer>1</integer>
+						</array>
+					</dict>
+				</array>
 				<key>type</key>
 				<integer>12</integer>
 			</dict>
@@ -2288,7 +2388,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.66666668653488159</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
