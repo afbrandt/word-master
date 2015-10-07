@@ -106,4 +106,31 @@ class Match: PFObject, PFSubclassing {
             }
         }
     }
+    
+    static func getDefaultsMatch() -> Match {
+        let match = Match()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        match.fromUser = PFUser.currentUser()
+        
+        if let dict = defaults.dictionaryForKey(MATCH_OFFLINE_KEY) {
+            match.fromUserWord = dict[PARSE_FROM_USER_WORD_KEY] as? String
+            match.toUserWord = dict[PARSE_TO_USER_WORD_KEY] as? String
+            
+            let guesses = Guess.getDefaultsGuesses()
+            match.guesses = guesses
+        }
+        
+        return match
+    }
+    
+    static func setDefaultsMatch(match: Match) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var dict: [String: AnyObject] = [:]
+        
+        dict[PARSE_FROM_USER_WORD_KEY] = match.fromUserWord
+        dict[PARSE_TO_USER_WORD_KEY] = match.toUserWord
+        
+        defaults.setObject(dict, forKey: MATCH_OFFLINE_KEY)
+        defaults.synchronize()
+    }
 }

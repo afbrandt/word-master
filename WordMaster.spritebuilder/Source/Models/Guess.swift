@@ -8,6 +8,8 @@
 
 import UIKit
 
+let PENTA_SOLO_GUESSES = "Solo Play Guesses"
+
 class Guess: PFObject, PFSubclassing {
 
     var owner: PFUser? {
@@ -26,6 +28,7 @@ class Guess: PFObject, PFSubclassing {
     }
 
     var guessUploadTask: UIBackgroundTaskIdentifier?
+    var count: Int = 0
     
     static func parseClassName() -> String {
         return "Guess"
@@ -71,4 +74,64 @@ class Guess: PFObject, PFSubclassing {
         }
     
     }
+    
+    func checkGuess() -> Bool {
+        if let string = string, let match = match, let fromUser = match.fromUser, let toUser = match.toUser {
+            var checkString: String!
+            if fromUser.madeGuess(self) {
+//                let count = WordHelper.commonCharactersForWord(string, inMatchString: match.toUserWord!)
+                checkString = match.toUserWord!
+            } else if toUser.madeGuess(self) {
+                checkString = match.fromUserWord!
+            } else  {
+                return false
+            }
+            let common = WordHelper.commonCharactersForWord(string, inMatchString: checkString)
+            count = common
+        }
+        
+        return true
+    }
+    
+    static func getDefaultsGuesses() -> [Guess] {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let arr = defaults.arrayForKey(PENTA_SOLO_GUESSES) as? [String] ?? []
+        var guesses: [Guess] = []
+        
+        for word in arr {
+            let guess = Guess()
+            guess.owner = PFUser.currentUser()
+            guess.string = word
+            guesses.append(guess)
+        }
+        
+        return guesses
+        
+    }
+    
+    static func setDefaultsGuesses(guesses: [Guess]) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var arr: [String] = []
+        
+        for guess in guesses {
+            let word = guess.string!
+            arr.append(word)
+        }
+        
+        defaults.setObject(arr, forKey: PENTA_SOLO_GUESSES)
+        defaults.synchronize()
+    }
+}
+
+extension PFUser {
+
+    func madeGuess(guess: Guess) -> Bool {
+        
+        if objectId == guess.owner?.objectId {
+            return true
+        }
+        return false
+    }
+
 }

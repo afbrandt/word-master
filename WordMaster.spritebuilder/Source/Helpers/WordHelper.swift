@@ -31,9 +31,17 @@ class WordHelper {
         
     }
     
-    static func commonCharactersForGuess(guess: Guess, inMatch match: Match) -> Int {
+    static func commonCharactersForWord(guess: String, inMatchString match: String) -> Int {
         
-        return 0
+        let result = match.characters.map { (char) -> String in
+            var out = ""
+            if guess.characters.contains(char) {
+                out = String(char)
+            }
+            return out
+        }
+        
+        return result.count
         
     }
     
@@ -45,7 +53,7 @@ class WordHelper {
             let index = Int(CCRANDOM_0_1()*count)
             string = array[index] as! String
         }
-        return string
+        return string.uppercaseString
     }
     
 }

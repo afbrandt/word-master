@@ -11,6 +11,7 @@ import GameKit
 class Gameplay: CCNode {
 
     var match: Match?
+    var isSoloMatch: Bool = false
     
     var guesses: [Guess] = []
     
@@ -43,19 +44,21 @@ class Gameplay: CCNode {
             
             for guess in arr {
                 
-                let node = CCBReader.load("GuessNode") as! GuessNode
-                let count = WordHelper.commonCharactersForGuess(guess, inMatch: match)
-                
-                node.guess = guess
-                node.count = count
-                
-                if guess.owner!.objectId == PFUser.currentUser()?.objectId {
-                    playerGuesses.addChild(node)
-                    print("added guess to player")
-                } else {
-                    opponentGuesses.addChild(node)
-                    print("added guess to opponent")
-                }
+                addGuess(guess)
+//                let node = CCBReader.load("GuessNode") as! GuessNode
+//                //let count = WordHelper.commonCharactersForGuess(guess.string, inMatch: match)
+//                let count = 1
+//                
+//                node.guess = guess
+//                node.count = count
+//                
+//                if guess.owner!.objectId == PFUser.currentUser()?.objectId {
+//                    playerGuesses.addChild(node)
+//                    print("added guess to player")
+//                } else {
+//                    opponentGuesses.addChild(node)
+//                    print("added guess to opponent")
+//                }
             }
         }
         
@@ -73,6 +76,8 @@ class Gameplay: CCNode {
     
     override func onExit() {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        Match.setDefaultsMatch(match!)
+        Guess.setDefaultsGuesses(guesses)
         super.onExit()
     }
     
@@ -98,13 +103,40 @@ class Gameplay: CCNode {
             guess.match = match
             guess.string = string
             guess.uploadGuess()
+            addGuess(guess)
+            
+            
+            if isSoloMatch {
+                let word = WordHelper.randomWord()
+                let guess = Guess()
+                guess.match = match
+                guess.string = word
+                addGuess(guess)
+            }
             
             animationManager.runAnimationsForSequenceNamed("HideDialog")
+            
             print("user chose wisely...")
         } else {
             
         }
         
+    }
+    
+    func addGuess(guess: Guess) {
+        guesses.append(guess)
+        let node = CCBReader.load("GuessNode") as! GuessNode
+
+        guess.checkGuess()
+        node.guess = guess
+        
+        if let player = PFUser.currentUser() {
+            if player.madeGuess(guess) {
+                playerGuesses.addChild(node)
+            } else {
+                opponentGuesses.addChild(node)
+            }
+        }
     }
     
 }

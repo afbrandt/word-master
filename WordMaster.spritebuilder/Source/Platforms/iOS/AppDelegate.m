@@ -76,7 +76,7 @@
 
 - (CCScene*) startScene
 {
-    return [CCBReader loadAsScene:@"MainScene"];
+    return [CCBReader loadAsScene:@"Splash"];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

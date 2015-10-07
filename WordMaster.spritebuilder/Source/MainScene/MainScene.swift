@@ -9,12 +9,18 @@
 import Foundation
 
 let MATCH_BUILT = "Built a match!"
+let MATCH_OFFLINE_KEY = "Penta Single Player"
+let MATCH_HAS_ACTIVE_OFFLINE_KEY = "Active Single Player"
 let WORD_BUILT = "Built a word!"
 
-class MainScene: CCNode {
+class MainScene: CCNode, MainScrollDelegate {
 
     let fbMgr = FacebookHelper.sharedInstance
     let parseMgr = ParseHelper.sharedInstance
+    var mainScroll: MainScroll!
+    
+    var matches: [Match] = []
+    var pendingMatch: Match?
     
     //code connected elements
     var facebookButton: CCButton!
@@ -24,10 +30,13 @@ class MainScene: CCNode {
     var tableStencil: CCNodeColor!
     var textInputField: CCTextField!
     
-    var scroll: CCScrollView!
+    var scrollContainer: CCScrollView!
+    var loadingContainer: CCNode!
     
-    var matches: [Match] = []
-    var pendingMatch: Match?
+    func didLoadFromCCB() {
+//        mainScroll = CCBReader.load("MainScroll") as? MainScroll
+//        scroll.contentNode = mainScroll
+    }
     
     override func onEnter() {
         super.onEnter()
@@ -81,6 +90,12 @@ class MainScene: CCNode {
         
         userInteractionEnabled = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("buildWord:"), name: MATCH_BUILT, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("soloMatch"), name: MATCH_OFFLINE_KEY, object: nil)
+        
+        if let node = scrollContainer.contentNode as? MainScroll {
+            mainScroll = node
+            mainScroll.delegate = self
+        }
         
         resizeScroll()
     }
@@ -91,18 +106,26 @@ class MainScene: CCNode {
     }
     
     func resizeScroll() {
-        if let node = scroll.contentNode as? MainScroll {
-            let height = node.scrollContainer.contentSizeInPoints.height
-            if height < scroll.contentSizeInPoints.height {
-                scroll.contentSizeInPoints.height = height
-            } else {
-                scroll.verticalScrollEnabled = true
-            }
+//        if let node = scrollContainer.contentNode as? MainScroll {
+        let height = mainScroll.scrollContainer.contentSizeInPoints.height
+        if height < scrollContainer.contentSizeInPoints.height {
+            scrollContainer.contentSizeInPoints.height = height
+        } else {
+            scrollContainer.verticalScrollEnabled = true
         }
+//        }
     }
     
     func startLogin() {
         fbMgr.tryLoginViaParse()
+    }
+    
+    func soloMatch() {
+        print("start solo play")
+        
+        //need to check if match exists
+        let match = Match.getDefaultsMatch()
+        pushMatch(match, isSolo: true)
     }
     
     func continueMatch(button: CCButton) {
@@ -112,18 +135,19 @@ class MainScene: CCNode {
         
             let match = matches[index]
             if match.isReady {
-                pushMatch(match)
+                pushMatch(match, isSolo: false)
             } else {
                 promptWordInputForMatch(match)
             }
         }
     }
     
-    func pushMatch(match: Match) {
+    func pushMatch(match: Match, isSolo: Bool) {
         let gameplay = CCBReader.load("Gameplay") as! Gameplay
         let scene = CCScene()
         //let index = Int(tableNode.selectedRow)
         gameplay.match = match
+        gameplay.isSoloMatch = isSolo
         NSNotificationCenter.defaultCenter().removeObserver(self)
         scene.addChild(gameplay)
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -196,7 +220,7 @@ class MainScene: CCNode {
             match.isReady = true
             match.saveMatch()
             //start game, transition to gameplay
-            pushMatch(match)
+            pushMatch(match, isSolo: false)
         } else {
             //newly created match, need match creator's word
             match.fromUserWord = word
@@ -214,6 +238,16 @@ class MainScene: CCNode {
                 self.tableNode.reloadData()
             }
         }
+    }
+    
+    func didFinishPreparingContent() {
+        loadingContainer.cascadeOpacityEnabled = true
+        
+        let fade = CCActionFadeOut(duration: 0.5)
+        let remove = CCActionRemove()
+        let action =  CCActionSequence(array: [fade, remove])
+        
+        loadingContainer.runAction(action)
     }
     
 }

@@ -22,6 +22,7 @@
 		493A55851BB4E25C00AC6F31 /* LetterGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A55841BB4E25B00AC6F31 /* LetterGrid.swift */; settings = {ASSET_TAGS = (); }; };
 		493D09671B90602300865B84 /* MatchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D09661B90602300865B84 /* MatchTableCell.swift */; };
 		496CA3371B8889F0003CED79 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496CA3361B8889F0003CED79 /* GameKit.framework */; };
+		49881F951BBF9E7400E20A88 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49881F941BBF9E7400E20A88 /* Splash.swift */; settings = {ASSET_TAGS = (); }; };
 		49B9BA831BBF190D00F85EF4 /* MainScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9BA821BBF190D00F85EF4 /* MainScroll.swift */; settings = {ASSET_TAGS = (); }; };
 		49EFDAFE1B896B5C00CA4991 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDAFD1B896B5C00CA4991 /* Parse.framework */; };
 		49EFDB071B896C1300CA4991 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */; };
@@ -197,6 +198,7 @@
 		493A55841BB4E25B00AC6F31 /* LetterGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterGrid.swift; sourceTree = "<group>"; };
 		493D09661B90602300865B84 /* MatchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableCell.swift; sourceTree = "<group>"; };
 		496CA3361B8889F0003CED79 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		49881F941BBF9E7400E20A88 /* Splash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Splash.swift; path = Source/Splash.swift; sourceTree = "<group>"; };
 		49B9BA821BBF190D00F85EF4 /* MainScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScroll.swift; sourceTree = "<group>"; };
 		49EFDAFD1B896B5C00CA4991 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		49EFDB011B896C1300CA4991 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 				49EFDB1C1B89D9C600CA4991 /* Models */,
 				491E74551BAEADA20073D240 /* WordSelector */,
 				D352B48019EC608A00829775 /* MetalShaders */,
+				49881F941BBF9E7400E20A88 /* Splash.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 				49287A0F1BAB8B7B00D953CE /* Gameplay+Table.swift in Sources */,
 				49EFDB271B89DA6700CA4991 /* Match.swift in Sources */,
 				491E74591BAEAF500073D240 /* LetterSelector.swift in Sources */,
+				49881F951BBF9E7400E20A88 /* Splash.swift in Sources */,
 				49EFDB251B89DA3800CA4991 /* MainScene.swift in Sources */,
 				49287A0D1BAB8B5100D953CE /* Gameplay.swift in Sources */,
 				49287A081BAB6FF700D953CE /* WordHelper.swift in Sources */,
